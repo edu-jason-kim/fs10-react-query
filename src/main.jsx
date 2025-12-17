@@ -1,15 +1,15 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import About from "./About.jsx";
+import About from "./pages/About.jsx";
+import Home from "./pages/Home.jsx";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    Component: App,
+    Component: Home,
   },
   {
     path: "/about",
