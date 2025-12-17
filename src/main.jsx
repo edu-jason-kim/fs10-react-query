@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
+import SizeReviewsPage from "./pages/SizeReviews.jsx";
 
 let router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ let router = createBrowserRouter([
   {
     path: "/products/:productId",
     Component: ProductDetail,
+  },
+  {
+    path: "/size-reviews",
+    Component: SizeReviewsPage,
   },
 ]);
 
