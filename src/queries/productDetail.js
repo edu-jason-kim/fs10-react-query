@@ -11,6 +11,8 @@ function useProductDetailQuery(productId) {
       const [, productId] = queryKey; // 배열 구조분해
       return getProduct(productId);
     },
+    // 기본 값 overwriting
+    staleTime: 2 * 60 * 1000,
   });
 
   return { data, isPending, error };

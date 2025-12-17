@@ -22,7 +22,16 @@ let router = createBrowserRouter([
   },
 ]);
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  // 기본 설정
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+      gcTime: 10 * 60 * 1000,
+      retry: 5,
+    },
+  },
+});
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

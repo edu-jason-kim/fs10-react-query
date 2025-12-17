@@ -8,6 +8,6 @@ export async function getProducts() {
 
 // 특정 게시글 fetch
 export async function getProduct(productId) {
-  const response = await fetch(`${BASE_URL}/products/${productId}`);
+  const response = await fetch(`${BASE_URL}/products12/${productId}`);
   return response.json();
 }
