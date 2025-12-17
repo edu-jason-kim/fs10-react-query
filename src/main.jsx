@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
 
 let router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ let router = createBrowserRouter([
   {
     path: "/about",
     Component: About,
+  },
+  {
+    path: "/products/:productId",
+    Component: ProductDetail,
   },
 ]);
 
