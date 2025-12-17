@@ -8,6 +8,7 @@ import Home from "./pages/Home.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import SizeReviewsPage from "./pages/SizeReviews.jsx";
 import ProductsPage from "./pages/Products.jsx";
+import ProductsInfinitePage from "./pages/ProductsInfinite.jsx";
 
 let router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ let router = createBrowserRouter([
   {
     path: "/products",
     Component: ProductsPage,
+  },
+  {
+    path: "/products/infinite",
+    Component: ProductsInfinitePage,
   },
   {
     path: "/products/:productId",
