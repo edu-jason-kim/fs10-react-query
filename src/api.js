@@ -6,6 +6,15 @@ export async function getProducts() {
   return response.json();
 }
 
+export async function getProductsPaginated(page = 0, limit = 2) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const offset = page * limit;
+  const response = await fetch(
+    `${BASE_URL}/products?limit=${limit}&offset=${offset}`
+  );
+  return response.json();
+}
+
 // 특정 상품 fetch
 export async function getProduct(productId) {
   const response = await fetch(`${BASE_URL}/products/${productId}`);
