@@ -1,15 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router";
-import { getProduct } from "../api";
+import useProductDetailQuery from "../queries/productDetail";
 
 // /products/:id
 function ProductDetailPage() {
   const { productId } = useParams();
 
-  const { data, isPending, error } = useQuery({
-    queryKey: ["products", productId],
-    queryFn: () => getProduct(productId),
-  });
+  const { data, isPending, error } = useProductDetailQuery(productId);
 
   if (isPending) return <div>로딩 중...</div>;
   if (error) return <div>에러 발생: {error.message}</div>;

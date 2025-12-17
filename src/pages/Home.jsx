@@ -2,10 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../api.js";
 import { Link } from "react-router";
 import ProductCount from "../components/ProductCount.jsx";
+import QUERY_KEYS from "../contants/query-keys.js";
 
 function Home() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["products"],
+    queryKey: [QUERY_KEYS.PRODUCTS],
     queryFn: getProducts,
     staleTime: 30 * 1000,
     gcTime: 60 * 10 * 1000,
